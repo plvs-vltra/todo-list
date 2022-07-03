@@ -1,0 +1,53 @@
+#todo {
+    background: white;
+    color: black;
+    border-radius: 6px;
+    padding: 16px;
+    margin: 10px;
+    width: 520px;
+}
+
+
+
+#todo h2 {
+    margin-bottom: 20px;
+}
+
+
+
+#todo ul {
+    list-style: none;
+}
+
+
+
+#todo ul li div {
+    padding: 10px 5px;
+    width: 100%;
+    border-bottom: 1px solid #bbbbbb;
+    max-width: 440px;
+    bottom: 4px;
+    font-size: 14px;
+    left: 6px;
+}
+
+
+
+#todo ul li:last-child div {
+    border-bottom: none;
+}
+
+
+
+#todo ul li > * {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    bottom: 4px;
+}
+
+
+
+#todo ul li input {
+    cursor: pointer;
+}
