@@ -31,7 +31,6 @@ function addTaskTo(where, task){
         taskHTML_li.appendChild(taskHTML_text);
 
         task.html = taskHTML_li;
-        console.log(where.lastChild)
         where.insertBefore(taskHTML_li, where.children[where.children.length - 1]);
 
         taskHTML_checkbox.addEventListener("click", ()=> {
@@ -56,15 +55,20 @@ function addTaskTo(where, task){
             task.text = taskHTML_text.innerHTML;
         });
 
+        let array = [...input.children];
+
+        array.forEach(children => {
+            input.removeChild(children);
+        })
 }
 
 
 
 
 input.addEventListener("click", () => {
+    input.classList = "";
     if(input.innerHTML == input_defautText){
         input.innerHTML = "";
-        input.classList = "";
     }
 });
 
@@ -88,11 +92,20 @@ document.body.addEventListener("click", event =>{
 
 
 input.addEventListener("keydown", event => {
+    input.classList = "";
     if(event.key == "Enter"){
+        event.preventDefault();
         let task = createTask(input.innerHTML, true);
         if(input.innerHTML !== "" && input.innerHTML !== input_defautText) addTaskTo(list, task);
+        input.classList = "";
         input.innerHTML = "";
-        input.textContent = "";
-        input.classList = "pale";
     }
 });
+
+
+input.addEventListener("paste", (event) => {
+    event.preventDefault();
+
+    var text = event.clipboardData.getData("text/plain");
+    document.execCommand("insertHTML", false, text);
+  });
