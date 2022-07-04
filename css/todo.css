@@ -20,10 +20,8 @@
     width: 100%;
     border-bottom: 1px solid #bbbbbb;
     max-width: 440px;
-    /* bottom: 4px; */
     font-size: 14px;
     left: 6px;
-    white-space: nowrap;
 }
 
 
@@ -38,7 +36,6 @@
     position: relative;
     display: inline-block;
     vertical-align: middle;
-    /* bottom: 4px; */
 }
 
 
